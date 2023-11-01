@@ -1,0 +1,81 @@
+{% extends 'crud/base.html' %}
+{% block body %}
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h3 class="text-primary">Bienvenue</h3>
+      <a href="#about" class="btn-get-started scrollto">Decouvrir</a>
+      <p><b>Mon spécialiste a porté de main</b> </p>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="content">
+                <h1><small class="text-white">Quel test voulez-vous effectuer?</small></h1>
+              <p style="font-size:16px;">
+               Il s'agit d'une solution destiné a vous informer de l'état courant de votre santé, vous permettre de faire des previsions...
+              </p>
+              <div class="text-center">
+                <a href="#" class="more-btn">En savoir plus<i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                
+                <div class="col-xl-6 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    {% load static %}
+                    <img src="{% static 'img/Models/coeur.jpeg' class='img-fluid' %}" alt="Ma Image">
+                    <h4>Maladie cardiovasculaires</h4>
+                      <p class="text-justify">Ils constituent un ensemble de troubles affectant le cœur et les vaisseaux sanguins.
+                      </p>
+<!--                    Link  to get Cardiac health -->
+                     <a  href="{% url 'coeur'  %}">
+                        <button class="btn btn-primary btn-lg">
+                          Consulter
+                        </button>
+                     </a>
+<!--                    end link-->
+                  </div>
+                </div>
+
+                <div class="col-xl-6 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+
+                    <img src="{% static 'img/Models/diabete.jpeg' class='img-fluid' %}" alt="Ma Image">
+                    <h4>Le Diabète </h4>
+                    <p>est une maladie chronique qui apparaît lorsque le pancréas ne produit pas suffisamment d'insuline .</p>
+<!--                  Link for diabete-->
+                    <a  href="{% url 'diabete' %}">
+                      <button class="btn btn-success btn-lg">
+                          Consulter
+                        </button>
+                    </a>
+<!--                    end Link-->
+                  </div>
+                </div>
+               
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+  </main><!-- End #main -->
+
+
+{% endblock %}

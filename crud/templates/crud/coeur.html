@@ -1,0 +1,145 @@
+{% extends 'crud/base.html' %}
+{% block body %}
+<div class="card">
+    <br><br>
+</div>
+<br><br><br><br>
+<section id="appointment" class="appointment section-bg">
+    <div class="container">
+    <form  action="create" method="POST" class="php-email-form">
+
+    {% csrf_token %}
+<!--    New dataForm-->
+         <div class="row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Entrer votre nom" >
+
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="number" class="form-control" name="age" id="email" placeholder="Entrer votre age" >
+
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+                <select name="sex" id="" class="form-select">
+
+                    <option value="0">Femme</option>
+                    <option value="1">Homme</option>
+                </select>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+                 <select name="cp"  class="form-select">
+                    <option value="">Indiquer le type de douleur thoracique</option>
+                    <option value="0">Angine </option>
+                    <option value="1">Angine atypique</option>
+                    <option value="2">Douleur non angineuse</option>
+                    <option value="3">Asymptomatique)</option>
+                </select>
+            </div>
+
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="text" class="form-control" name="trtbps" id="trtbps" placeholder="tension artérielle au repos (en mm de Hg)"  >
+
+            </div>
+             <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="text" class="form-control" name="chol"  placeholder="Cholestérol sérique en mg"  >
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+
+              <select name="fbs"  class="form-select">
+                    <option value="">Glycémie à jeun > 120 mg/dl </option>
+                    <option value="0">Oui </option>
+                    <option value="1">Non</option>
+
+                </select>
+
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <select name="restecg"  class="form-select">
+                    <option value="">Résultats de l'électrocardiographie/Repos</option>
+                    <option value="0">Non </option>
+                    <option value="1">Oui</option>
+
+                </select>
+            </div>
+             <div class="col-md-4 form-group mt-3 mt-md-0">
+
+              <input type="text" class="form-control" name="thalachh"  placeholder="Fréquence cardiaque max"  >
+
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4 form-group mt-3">
+                  <select name="exng"  class="form-select">
+                    <option value="">Angine/douleur déclenchée par l'exercice</option>
+                    <option value="0">Non </option>
+                    <option value="1">Oui</option>
+                  </select>
+              </div>
+               <div class="col-md-4 form-group mt-3">
+                    <input type="text" name="caa" class="form-control"  placeholder="Nombre de vaisseaux" >
+               </div>
+          </div>
+
+        <div class="text-center">
+            <button class="btn" type="submit"> Soumettre</button>
+        </div>
+    
+    </form>
+    <br/>
+    </div>
+</section>
+<section id="services" class="services">
+      <div class="container">
+        <table class="table table-bordered">
+    <thead class="alert-info">
+        <tr>
+            <th>Nom</th>
+            <th>Age</th>
+            <th>Sexe</th>
+            <th>Douleur thoracique</th>
+            <th>Cholestérol </th>
+            <th>Fréquence cardiaque</th>
+            <th>Nombre de vaisseaux</th>
+            <th>Actions</th>
+            <th>Resultat du Model :</th>
+
+        </tr>
+    </thead>
+    <tbody>
+   {% for member in members %}
+        <tr>
+            <td>{{ member.name }}</td>
+            <td>{{ member.age }}</td>
+            <td>{{ member.sex }}</td>
+            <td>{{ member.cp }}</td>
+            <td>{{ member.chol }}</td>
+            <td>{{ member.trtbps }}</td>
+            <td>{{ member.caa }}</td>
+            <td>
+                <center>
+                    <a class="btn btn-sm btn-warning" href="edit/{{ member.id }}">
+                        <span class="glyphicon glyphicon-edit"></span> Update
+                    </a>
+                    <a class="btn btn-sm btn-danger" href="delete/{{ member.id }}">
+                        <span class="glyphicon glyphicon-trash"></span> Remove
+                    </a>
+                </center>
+            </td>
+            <td>
+                <center>
+                    <p class="text-success"><b>{{ prediction }}</b></p>
+                </center>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+      </div>
+</section>
+{% endblock %}

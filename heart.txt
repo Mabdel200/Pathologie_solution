@@ -1,0 +1,27 @@
+
+#Data analysis
+"""
+DESCRIPTION DU DATASET : (303, 14)
+
+
+1)age= age of the patient in year
+2)sex= gender of the patient (1 = homme ; 0 = femme)
+3)cp=  type de douleur thoracique (0 = angine typique ; 1 = angine atypique ;
+    2 = douleur non angineuse ; 3 = asymptomatique)
+4)trtbps=  tension artérielle au repos (en mm de Hg à l'admission à l'hôpital)
+5)chol= cholestérol sérique en mg/dl récupéré via le capteur IMC ou autre
+6)fbs=glycémie à jeun > 120 mg/dl (1 = vrai ; 0 = faux)
+7)restecg=résultats de l'électrocardiographie au repos (0 = normal ;
+    1 = présence de ST-T ; 2 = hypertrophie)
+8)thalachh=fréquence cardiaque maximale atteinte
+9)exng= angine/douleur déclenchée par l'exercice (1 = oui ; 0 = non)
+10)\oldpeak - dépression du segment ST induite par l'exercice par rapport au repos
+11)\slope - la pente du segment ST lors de l'exercice de pointe (1 = ascendante ;
+     2 = plate ; 3 = descendante)
+12)caa= nombre de principaux vaisseaux (de 0 à 4) colorés par fluoroscopie
+13)\thal - 1 = normal ; 2 = défaut fixe ; 3 = défaut réversible
+14)output= l'attribut prédit - diagnostic de maladie cardiaque (statut de la maladie angiographique) 
+(Valeur 0 = rétrécissement du diamètre < 50% ; Valeur 1 = rétrécissement du diamètre > 50%)
+0=faible probabilite d'avoir une attaque, 1=forte probabilité d'avoir une attaque
+"""
+
